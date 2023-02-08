@@ -1,0 +1,13 @@
+import axios from "axios";
+
+async function fetchRepost() {
+  try {
+    const user = await axios.get("https://api.github.com/users/HenryModesto");
+    const repos = await axios.get((user) => axios.get(response.data.repos_url));
+    console.log(repos);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+fetchRepost();
